@@ -1,0 +1,20 @@
+CREATE TABLE `appypie`.`orderhistory` (
+  `orderHistoryId` INT NOT NULL AUTO_INCREMENT,
+  `orderId` INT NULL,
+  `userId` INT NULL,
+  `orderDate` DATETIME NULL,
+  `totalAmount` FLOAT NULL,
+  `status` VARCHAR(80) NULL,
+  PRIMARY KEY (`orderHistoryId`),
+  INDEX `orderid_idx` (`orderId` ASC) VISIBLE,
+  INDEX `userid_idx` (`userId` ASC) VISIBLE,
+  CONSTRAINT `fk_orderhistory_orderid`
+    FOREIGN KEY (`orderId`)
+    REFERENCES `appypie`.`ordertable` (`orderId`)
+    ON DELETE CASCADE
+    ON UPDATE NO ACTION,
+  CONSTRAINT `fk_orderhistory_userid`
+    FOREIGN KEY (`userId`)
+    REFERENCES `appypie`.`user` (`userId`)
+    ON DELETE CASCADE
+    ON UPDATE NO ACTION);

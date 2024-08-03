@@ -1,0 +1,10 @@
+CREATE TABLE `appypie`.`restaurant` (
+  `restaurantId` INT NOT NULL AUTO_INCREMENT,
+  `restaurantName` VARCHAR(45) NOT NULL,
+  `deliveryTime` INT NOT NULL,
+  `cuisineType` VARCHAR(45) NOT NULL,
+  `address` VARCHAR(45) NOT NULL,
+  `ratings` FLOAT NOT NULL,
+  `isActive` TINYINT NOT NULL,
+  `adminId` INT NULL,
+  PRIMARY KEY (`restaurantId`));

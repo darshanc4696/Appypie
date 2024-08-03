@@ -1,0 +1,16 @@
+CREATE TABLE `appypie`.`menu` (
+  `menuId` INT NOT NULL AUTO_INCREMENT,
+  `restaurantId` INT NULL,
+  `menuName` VARCHAR(45) NOT NULL,
+  `price` FLOAT NOT NULL,
+  `description` VARCHAR(500) NOT NULL,
+  `isAvailable` TINYINT NOT NULL,
+  `imgPath` VARCHAR(100) NULL,
+  PRIMARY KEY (`menuId`),
+  INDEX `restaurantid_idx` (`restaurantId` ASC) VISIBLE,
+  CONSTRAINT `fk_menu_restaurantId`
+    FOREIGN KEY (`restaurantId`)
+    REFERENCES `appypie`.`restaurant` (`restaurantId`)
+    ON DELETE CASCADE
+    ON UPDATE NO ACTION
+);

@@ -1,0 +1,21 @@
+CREATE TABLE `appypie`.`ordertable` (
+  `orderId` INT NOT NULL AUTO_INCREMENT,
+  `restaurantId` INT NOT NULL,
+  `userId` INT NOT NULL,
+  `orderDate` DATETIME NOT NULL DEFAULT CURRENT_TIMESTAMP,
+  `totalAmount` FLOAT NOT NULL,
+  `status` VARCHAR(45) NOT NULL,
+  `paymentMode` VARCHAR(45) NOT NULL,
+  PRIMARY KEY (`orderId`),
+  INDEX `restaurantId_idx` (`restaurantId` ASC) VISIBLE,
+  INDEX `userId_idx` (`userId` ASC) VISIBLE,
+  CONSTRAINT `restaurantId`
+    FOREIGN KEY (`restaurantId`)
+    REFERENCES `appypie`.`restaurant` (`restaurantId`)
+    ON DELETE CASCADE
+    ON UPDATE NO ACTION,
+  CONSTRAINT `userId`
+    FOREIGN KEY (`userId`)
+    REFERENCES `appypie`.`user` (`userId`)
+    ON DELETE CASCADE
+    ON UPDATE NO ACTION);

@@ -1,0 +1,19 @@
+CREATE TABLE `appypie`.`orderitem` (
+  `orderItemId` INT NOT NULL AUTO_INCREMENT,
+  `orderId` INT NOT NULL,
+  `menuId` INT NOT NULL,
+  `quantity` INT NOT NULL,
+  `subTotal` FLOAT NOT NULL,
+  PRIMARY KEY (`orderItemId`),
+  INDEX `orderId_idx` (`orderId` ASC) VISIBLE,
+  CONSTRAINT `orderId`
+    FOREIGN KEY (`orderId`)
+    REFERENCES `appypie`.`ordertable` (`orderId`)
+    ON DELETE CASCADE
+    ON UPDATE NO ACTION
+CONSTRAINT `fk_orderitem_menuId`
+    FOREIGN KEY (`menuId`)
+    REFERENCES `appypie`.`ordertable` (`menuId`)
+    ON DELETE CASCADE
+    ON UPDATE NO ACTION
+);
