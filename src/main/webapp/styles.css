@@ -1,0 +1,163 @@
+@charset "UTF-8";
+
+/* Basic Styling */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Arial', sans-serif;
+}
+
+body {
+    background-color: #f5f5f5;
+    color: #333;
+}
+
+/* Navbar */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #fc8019;
+    padding: 10px 20px;
+}
+
+.navbar .logo a {
+    color: white;
+    font-size: 24px;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+.navbar nav ul {
+    list-style-type: none;
+    display: flex;
+}
+
+.navbar nav ul li {
+    margin-left: 20px;
+}
+
+.navbar nav ul li a {
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    padding: 8px 12px;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.navbar nav ul li a:hover {
+    background-color: #ffa64d;
+}
+
+/* Hero Section */
+.hero {
+    background-image: url('hero-background.jpg'); /* Replace with your image path */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+    height: 400px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+    color: #333;
+}
+
+/* Light overlay to make the background image appear smooth */
+.hero::before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.7); /* Light overlay, adjust opacity for more smoothness */
+    z-index: 1;
+}
+
+/* Content on top of the background image */
+.hero-content {
+    position: relative;
+    z-index: 2; /* Ensures text appears above the background image and overlay */
+}
+
+
+.hero-content h1 {
+    font-size: 48px;
+    color: #333;
+}
+
+.hero-content p {
+    font-size: 20px;
+    color: #444;
+}
+
+/* Restaurants Section */
+.restaurants {
+    padding: 40px 20px;
+    text-align: center;
+    background-color: #fff;
+}
+
+.restaurants h2 {
+    font-size: 36px;
+    margin-bottom: 30px;
+}
+
+.restaurant-list {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+}
+
+.restaurant-card {
+    background-color: #fff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    width: 300px;
+    margin-bottom: 20px;
+    padding: 20px;
+    text-align: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+}
+
+.restaurant-card:hover {
+    transform: scale(1.05);
+}
+
+.restaurant-card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+}
+
+.restaurant-card h3 {
+    font-size: 24px;
+    margin-top: 15px;
+}
+
+.restaurant-card p {
+    font-size: 16px;
+    color: #666;
+}
+
+/* Footer */
+footer {
+    background-color: #fc8019;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    position: relative;
+    bottom: 0;
+    width: 100%;
+}
+
+footer p {
+    margin: 10px 0;
+}
