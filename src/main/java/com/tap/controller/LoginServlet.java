@@ -7,6 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import com.tap.daoimpls.UserDAOImpl;
 import com.tap.model.User;
@@ -28,7 +29,9 @@ public class LoginServlet extends HttpServlet
 			String password = req.getParameter("password");
 			if(user.getPassword().equals(password))
 			{
-				resp.sendRedirect("home.jsp");
+				HttpSession session = req.getSession();
+				session.setAttribute("loggedInUser", user);
+				resp.sendRedirect("index.jsp");
 			}
 			else
 			{

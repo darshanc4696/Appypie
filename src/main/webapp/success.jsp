@@ -50,7 +50,7 @@
 <body>
     <div class="container">
         <h1>Successfully registered!</h1>
-        <a href="index.jsp">Back to Home Page</a>
+        <a href="login.jsp">Login Now</a>
     </div>
 </body>
 </html>
