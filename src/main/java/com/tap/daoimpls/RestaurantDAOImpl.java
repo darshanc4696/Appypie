@@ -86,7 +86,8 @@ public class RestaurantDAOImpl implements RestaurantDAO
 						resultSet.getString("address"),
 						resultSet.getFloat("ratings"),
 						resultSet.getBoolean("isActive"),
-						resultSet.getInt("adminId")
+						resultSet.getInt("adminId"),
+						resultSet.getString("imgPath")
 						));
 			}
 			

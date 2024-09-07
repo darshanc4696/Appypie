@@ -99,53 +99,84 @@ body {
 /* Restaurants Section */
 .restaurants {
     padding: 40px 20px;
-    text-align: center;
     background-color: #fff;
 }
 
 .restaurants h2 {
-    font-size: 36px;
-    margin-bottom: 30px;
+    font-size: 28px;
+    margin-bottom: 20px;
+    text-align: center;
 }
 
+/* Grid layout for restaurant cards */
 .restaurant-list {
-    display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4 items per row */
+    gap: 20px;
+    justify-items: center;
 }
 
 .restaurant-card {
     background-color: #fff;
     border: 1px solid #ddd;
-    border-radius: 8px;
-    width: 300px;
-    margin-bottom: 20px;
-    padding: 20px;
-    text-align: center;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s;
+    border-radius: 10px;
+    overflow: hidden;
+    width: 100%;
+    max-width: 300px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
 }
 
 .restaurant-card:hover {
-    transform: scale(1.05);
+    transform: translateY(-10px);
 }
 
 .restaurant-card img {
     width: 100%;
-    height: 200px;
+    height: 180px;
     object-fit: cover;
-    border-radius: 8px;
 }
 
-.restaurant-card h3 {
-    font-size: 24px;
-    margin-top: 15px;
+.restaurant-info {
+    padding: 15px;
+    text-align: left;
 }
 
-.restaurant-card p {
-    font-size: 16px;
+.restaurant-info h3 {
+    font-size: 20px;
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.restaurant-info p {
+    margin: 5px 0;
+    font-size: 14px;
     color: #666;
 }
+
+.restaurant-info .rating {
+    font-size: 16px;
+    color: #ffbf00;
+    font-weight: bold;
+}
+
+.restaurant-card .view-menu {
+    display: block;
+    text-align: center;
+    padding: 10px 0;
+    background-color: #fc8019;
+    color: white;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    border-top: 1px solid #ddd;
+    transition: background-color 0.3s ease;
+}
+
+.restaurant-card .view-menu:hover {
+    background-color: #e67300;
+}
+
 
 /* Footer */
 footer {
@@ -161,3 +192,46 @@ footer {
 footer p {
     margin: 10px 0;
 }
+
+/* Welcome Pop-up Styles */
+.popup {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 20%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px 30px;
+    background-color: #fff;
+    border: 2px solid #333;
+    border-radius: 8px;
+    z-index: 1000;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    text-align: center;
+    font-size: 1.2em;
+    color: #333;
+    opacity: 0;
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.popup.show {
+    display: block;
+    opacity: 1;
+    transform: translate(-50%, -50%) scale(1);
+}
+
+/* Optional: Overlay to dim the background when popup is active */
+.popup-overlay {
+    display: none; /* Hidden by default */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 999;
+}
+
+.popup-overlay.show {
+    display: block;
+}
+

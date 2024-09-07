@@ -10,7 +10,22 @@ public class Restaurant
 	private float ratings;
 	private boolean isActive;
 	private int adminId;
+	private String imgPath;
 	
+	public Restaurant(int restaurantId, String restaurantName, int deliveryTime, String cuisineType, String address,
+			float ratings, boolean isActive, int adminId, String imgPath) {
+		super();
+		this.restaurantId = restaurantId;
+		this.restaurantName = restaurantName;
+		this.deliveryTime = deliveryTime;
+		this.cuisineType = cuisineType;
+		this.address = address;
+		this.ratings = ratings;
+		this.isActive = isActive;
+		this.adminId = adminId;
+		this.imgPath = imgPath;
+	}
+
 	public Restaurant(String restaurantName, int deliveryTime, String cuisineType, String address, float ratings,
 			boolean isActive, int adminId) {
 		super();
@@ -95,6 +110,18 @@ public class Restaurant
 		this.adminId = adminId;
 	}
 	
+	public String getImgPath() {
+		return imgPath;
+	}
+
+	public void setImgPath(String imgPath) {
+		this.imgPath = imgPath;
+	}
+
+	public boolean isActive() {
+		return isActive;
+	}
+
 	@Override
 	public String toString() {
 		return "Restaurant [restaurantId=" + restaurantId + ", restaurantName=" + restaurantName + ", deliveryTime="
