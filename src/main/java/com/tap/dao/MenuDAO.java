@@ -9,7 +9,7 @@ public interface MenuDAO
 {
 	int addMenuItem(Menu m);
 	List<Menu> fetchAllMenu();
-	Menu fetchSpecificMenuItem(int menuId, int restaurantId);		
+	List<Menu> fetchSpecificMenuItem(int restaurantId);		
 	int updateMenuItem(Menu m);
 	int deleteMenuItem(int menuId, int restaurantId);
 	

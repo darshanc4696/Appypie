@@ -4,6 +4,7 @@
 <%@ page import="com.tap.model.Restaurant" %>
 <%@ page import="com.tap.model.User" %>
 <%@ page import="com.tap.daoimpls.RestaurantDAOImpl"%>
+<%@ include file="navbar.jsp"%>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -14,60 +15,6 @@
     <link rel="stylesheet" href="styles.css">
 </head>
 <body>
-    <!-- Navbar -->
-    <header>
-        <div class="navbar">
-            <div class="logo">
-                <a href="index.jsp">APPYPIE</a>
-            </div>
-            <nav>
-                <ul>
-                    <li><a href="index.jsp">Home</a></li>
-                    
-                    <% User loggedInUser = (User)session.getAttribute("loggedInUser"); %>
-                    
-                    <% if(loggedInUser != null)
-                    {%>
-                    	<li><a href="cart">View Cart</a></li>
-                    	<li><a href="orderhistory">Order History</a></li>
-                    	<li><a href="logout">Logout</a></li>
-                    	
-                    	<!-- Welcome Pop-up -->
-                        <div id="welcomePopup" class="popup">
-                            Welcome, <%= loggedInUser.getUsername() %>!
-                        </div>
-                        
-                        <!-- Optional: Overlay for the popup -->
-                        <div id="popupOverlay" class="popup-overlay"></div>
-
-                        <script>
-                            // Show pop-up and hide after 10 seconds
-                            window.onload = function() {
-                                var popup = document.getElementById('welcomePopup');
-                                // var overlay = document.getElementById('popupOverlay');
-
-                                // Show the pop-up
-                                popup.classList.add('show');
-                                // overlay.classList.add('show'); // If using overlay
-
-                                // Hide the pop-up after 10 seconds
-                                setTimeout(function() {
-                                    popup.classList.remove('show');
-                                    // overlay.classList.remove('show'); // If using overlay
-                                }, 10000); // 10,000 milliseconds = 10 seconds
-                            }
-                        </script>
-                   	<%}
-                   	else
-                   	{ %>
-	                   	<li><a href="register.jsp">Sign Up</a></li>
-	                    <li><a href="login.jsp">Sign In</a></li>
-                   	<% }%>
-
-                </ul>
-            </nav>
-        </div>
-    </header>
 
     <!-- Hero Section -->
     <section class="hero">

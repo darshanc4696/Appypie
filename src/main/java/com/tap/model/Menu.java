@@ -29,6 +29,17 @@ public class Menu
 		this.description = description;
 		this.isAvailable = isAvailable;
 	}
+	
+	public Menu(int menuId, int restaurantId, String itemName, float price, String description, boolean isAvailable, String imgPath) {
+		super();
+		this.menuId = menuId;
+		this.restaurantId = restaurantId;
+		this.itemName = itemName;
+		this.price = price;
+		this.description = description;
+		this.isAvailable = isAvailable;
+		this.imgPath = imgPath;
+	}
 
 	public int getMenuId() {
 		return menuId;

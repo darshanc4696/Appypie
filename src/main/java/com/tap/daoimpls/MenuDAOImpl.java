@@ -22,7 +22,7 @@ public class MenuDAOImpl implements MenuDAO
 
 	private static final String ADD_MENU_ITEM = "insert into menu(restaurantId, itemName, price, description, isAvailable) values(?,?,?,?,?)";
 	private static final String SELECT_ALL_MENU = "select * from menu";
-	private static final String SELECT_SPECIFIC_MENU = "select * from menu where menuId=? and restaurantId=?";
+	private static final String SELECT_SPECIFIC_MENU = "select * from menu where restaurantId=?";
 	private static final String UPDATE_SPECIFIC_MENU = "update menu set restaurantId=?, itemName=?, price=?, description=?, isAvailable=? where menuId=?";
 	private static final String DELETE_MENU = "delete from menu where menuId=? and restaurantId=?";
 	
@@ -80,7 +80,8 @@ public class MenuDAOImpl implements MenuDAO
 						resultSet.getString("ItemName"),
 						resultSet.getFloat("price"),
 						resultSet.getString("description"),
-						resultSet.getBoolean("isAvailable")
+						resultSet.getBoolean("isAvailable"),
+						resultSet.getString("imgPath")
 						));
 			}
 		}
@@ -92,24 +93,22 @@ public class MenuDAOImpl implements MenuDAO
 	}
 
 	@Override
-	public Menu fetchSpecificMenuItem(int menuId, int restaurantId) 
+	public List<Menu> fetchSpecificMenuItem(int restaurantId) 
 	{
 		try
 		{
 			pstmt = connection.prepareStatement(SELECT_SPECIFIC_MENU);
 			
-			pstmt.setInt(1, menuId);
-			pstmt.setInt(2, restaurantId);
+			pstmt.setInt(1, restaurantId);
 			
 			resultSet = pstmt.executeQuery();
 			menuList = extractAllMenuFromResultSet(resultSet);
-			menu = menuList.get(0);
 		}
 		catch(Exception e)
 		{
 			e.printStackTrace();
 		}
-		return menu;
+		return menuList;
 	}
 
 	@Override
