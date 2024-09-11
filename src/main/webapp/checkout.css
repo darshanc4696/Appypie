@@ -1,0 +1,100 @@
+@charset "UTF-8";
+
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    margin: 0;
+    padding: 0; /* Changed to 0 to prevent extra space around the body */
+}
+
+/* Ensure the container is centered and has space from the navbar */
+.checkout-container {
+    width: 80%;
+    margin: 80px auto 20px auto; /* Adjust the top margin to create space from the navbar */
+    background-color: #fff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    box-sizing: border-box; /* Ensure padding is included in the width */
+}
+
+/* Table Styles */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
+
+th, td {
+    padding: 15px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+}
+
+th {
+    background-color: #f8f8f8;
+    font-weight: bold;
+}
+
+tr:hover {
+    background-color: #f1f1f1;
+}
+
+.total-container {
+    text-align: right;
+    font-size: 18px;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+/* Payment Section Styling */
+.payment-section {
+    text-align: center;
+    margin-top: 30px;
+}
+
+label {
+    font-size: 16px;
+    display: block;
+    margin-bottom: 10px;
+}
+
+select {
+    padding: 8px;
+    font-size: 16px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    width: 50%; /* Adjusted for better alignment */
+    margin-bottom: 20px;
+    box-sizing: border-box; /* Ensure padding is included in the width */
+}
+
+/* Confirm Order Button */
+.confirm-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #00b894;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.confirm-btn:hover {
+    background-color: #019d7f;
+}
+
+/* Responsive adjustments */
+@media screen and (max-width: 768px) {
+    .checkout-container {
+        width: 90%;
+        padding: 15px;
+        margin-top: 60px; /* Adjusted for smaller screens */
+    }
+
+    select {
+        width: 100%;
+    }
+}

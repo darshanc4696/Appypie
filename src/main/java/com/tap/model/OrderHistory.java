@@ -8,6 +8,7 @@ public class OrderHistory
 	private String orderDate;
 	private float totalAmount;
 	private String status;
+	
 	public OrderHistory(int orderId, int userId, String orderDate, float totalAmount, String status) {
 		super();
 		this.orderId = orderId;

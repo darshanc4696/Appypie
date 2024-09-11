@@ -12,5 +12,6 @@ public interface MenuDAO
 	List<Menu> fetchSpecificMenuItem(int restaurantId);		
 	int updateMenuItem(Menu m);
 	int deleteMenuItem(int menuId, int restaurantId);
+	Menu getMenuItem(int menuId);
 	
 }

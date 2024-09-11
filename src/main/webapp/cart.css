@@ -1,0 +1,113 @@
+/* Global Styles */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #808080; /* Light cement color */
+    margin: 0;
+    padding: 0;
+}
+
+.cart-container {
+    width: 80%;
+    margin: 20px auto;
+    background-color: #fff;
+    border-radius: 8px;
+    padding: 20px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+h2 {
+    text-align: center;
+    color: #333;
+    margin-bottom: 20px;
+}
+
+.cart-item {
+    margin-bottom: 20px;
+    padding-bottom: 20px;
+    border-bottom: 1px solid #ddd;
+}
+
+.cart-item p {
+    margin: 5px 0;
+    color: #555;
+}
+
+/* Cart Form Styling */
+.cart-form {
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.cart-form input[type="number"] {
+    width: 60px;
+    padding: 5px;
+    margin-right: 20px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* Buttons */
+.cart-form input[type="submit"] {
+    padding: 8px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 14px;
+    margin-right: 10px; /* Add spacing between buttons */
+}
+
+/* Update Button Styling */
+.update-button {
+    background-color: #00b894; /* Green color */
+    color: white;
+}
+
+.update-button:hover {
+    background-color: #019d7f;
+}
+
+/* Remove Button Styling */
+.remove-button {
+    background-color: #e17055; /* Orange color */
+    color: white;
+}
+
+.remove-button:hover {
+    background-color: #d35400;
+}
+
+/* Checkout Button Styling */
+.checkout {
+    text-align: right;
+    margin-top: 30px;
+}
+
+.checkout-button {
+    background-color: #0984e3; /* Blue color */
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.checkout-button:hover {
+    background-color: #74b9ff;
+}
+
+/* Responsive Styles */
+@media (max-width: 768px) {
+    .cart-form {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .cart-form input[type="submit"] {
+        margin-right: 0;
+        margin-bottom: 10px;
+    }
+}

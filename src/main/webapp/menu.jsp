@@ -22,17 +22,23 @@
     <!-- Menu Items -->
     <div>
         <% List<Menu> menuItems = (List<Menu>)session.getAttribute("menuItems");
-        for(Menu menu : menuItems)
+        for(Menu menuItem : menuItems)
         { %>
             <div class="menu-item">
-                <img src="<%= menu.getImgPath() %>" alt="<%= menu.getItemName() %>">
+                <img src="<%= menuItem.getImgPath() %>" alt="<%= menuItem.getItemName() %>">
                 <div class="menu-item-info">
-                    <h2><%= menu.getItemName() %></h2>
-                    <p><%= menu.getDescription() %></p>
-                    <p class="price">₹<%= menu.getPrice() %></p>
-                    <p class="customisable">Customisable</p>
+                    <h2><%= menuItem.getItemName() %></h2>
+                    <p><%= menuItem.getMenuId() %></p>
+                    <p><%= menuItem.getDescription() %></p>
+                    <p class="price">₹<%= menuItem.getPrice() %></p>
                 </div>
-                <a href=""><button class="add-button">ADD</button></a>
+                <form action="cart">
+                	<input type="hidden" name="menuId" value="<%= menuItem.getMenuId()%>">
+                	Quantity:<input type="number" name="quantity" value="1" min="1">
+                	<span class="customizable-text">Customizable</span>
+                	<input type="submit" value="Add to cart">
+                	<input type="hidden" name="action" value="add">
+                </form>
             </div>
         <% } %>
     </div>
