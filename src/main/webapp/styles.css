@@ -67,6 +67,19 @@ body {
     color: #333;
 }
 
+/* Logo Image Styling */
+.logo a {
+    display: flex;
+    align-items: center;
+}
+
+.logo-img {
+    width: auto; /* Auto adjust width */
+    height: 40px; /* Match the navbar height */
+    margin-right: 10px; /* Add space between the logo and text */
+}
+
+
 /* Light overlay to make the background image appear smooth */
 .hero::before {
     content: "";

@@ -46,14 +46,15 @@
 
         <!-- Total Amount -->
         <div class="total-container">
+        	<% session.setAttribute("carttotal", cart.getTotal());%>
             Total: ₹<%= cart.getTotal() %>
         </div>
 
         <!-- Payment Section -->
         <div class="payment-section">
-            <form action="orderconfirmed.jsp" method="post">
+            <form action="fillordertables" method="post">
                 <label for="payment-method">Select Payment Method:</label>
-                <select name="paymentMethod" id="payment-method" required>
+                <select name="paymentMode" id="payment-method" required>
                     <option value="" disabled selected>Select your option</option>
                     <option value="credit-card">Credit Card</option>
                     <option value="debit-card">Debit Card</option>

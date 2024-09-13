@@ -12,18 +12,21 @@
     <header>
         <div class="navbar">
             <div class="logo">
-                <a href="index.jsp">APPYPIE</a>
+                <a href="index.jsp">
+                    <img src="images/Appypielogo.jpg" alt="Appypie Logo" class="logo-img"> <!-- Appypie logo -->
+                    APPYPIE
+                </a>
             </div>
             <nav>
                 <ul>
                     <li><a href="index.jsp">Home</a></li>
-                    
+
                     <% 
                     // Retrieving the logged-in user from session
                     User loggedInUser = (User) session.getAttribute("loggedInUser");
                     Boolean popupShown = (Boolean) session.getAttribute("popupShown"); // Get popupShown attribute
                     %>
-                    
+
                     <!-- If the user is logged in -->
                     <% if(loggedInUser != null) { %>
                         <li><a href="cart.jsp">View Cart</a></li>
@@ -43,16 +46,13 @@
                                 // Show pop-up and hide after 10 seconds
                                 window.onload = function() {
                                     var popup = document.getElementById('welcomePopup');
-                                    // var overlay = document.getElementById('popupOverlay');
 
                                     // Show the pop-up
                                     popup.classList.add('show');
-                                    // overlay.classList.add('show'); // If using overlay
 
                                     // Hide the pop-up after 10 seconds
                                     setTimeout(function() {
                                         popup.classList.remove('show');
-                                        // overlay.classList.remove('show'); // If using overlay
                                     }, 10000); // 10,000 milliseconds = 10 seconds
                                 }
                             </script>

@@ -1,0 +1,81 @@
+@charset "UTF-8";
+
+/* General reset and page style */
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f7f7f7;
+}
+
+.order-details-container {
+    margin: 40px auto;
+    padding: 20px;
+    max-width: 1000px;
+    background-color: #ffffff;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.1);
+    border-radius: 8px;
+    margin-top: 20px;
+}
+
+/* Back button style */
+.back-btn-container {
+    text-align: right;
+    margin-top: 10px;
+    margin-right: 30px;
+}
+
+.back-btn {
+    padding: 10px 20px;
+    font-size: 16px;
+    background-color: #7FBF7F; /* Light blue-green mix */
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.back-btn:hover {
+    background-color: #66A366;
+}
+
+/* Order item styling */
+.order-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 30px;
+    padding: 15px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.order-image img {
+    width: 100px;
+    height: 100px;
+    border-radius: 8px;
+    margin-right: 20px;
+}
+
+.order-info {
+    flex-grow: 1;
+}
+
+.order-info h2 {
+    margin: 0 0 10px;
+    font-size: 20px;
+    color: #333;
+}
+
+.order-info p {
+    margin: 5px 0;
+    font-size: 16px;
+    color: #555;
+}
+
+/* Navbar and layout adjustments */
+.navbar {
+    margin-bottom: 40px;
+}
+
+.order-details-container {
+    margin-top: 80px;
+}

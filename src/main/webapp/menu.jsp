@@ -28,7 +28,6 @@
                 <img src="<%= menuItem.getImgPath() %>" alt="<%= menuItem.getItemName() %>">
                 <div class="menu-item-info">
                     <h2><%= menuItem.getItemName() %></h2>
-                    <p><%= menuItem.getMenuId() %></p>
                     <p><%= menuItem.getDescription() %></p>
                     <p class="price">₹<%= menuItem.getPrice() %></p>
                 </div>
