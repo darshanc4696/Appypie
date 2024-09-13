@@ -6,15 +6,15 @@ public class OrderItem
 	private int orderId;
 	private int menuId;
 	private int quantity;
-	private float subTotal;
-	public OrderItem(int orderId, int menuId, int quantity, float subTotal) {
+	private double subTotal;
+	public OrderItem(int orderId, int menuId, int quantity, double subTotal) {
 		super();
 		this.orderId = orderId;
 		this.menuId = menuId;
 		this.quantity = quantity;
 		this.subTotal = subTotal;
 	}
-	public OrderItem(int orderItemId, int orderId, int menuId, int quantity, float subTotal) {
+	public OrderItem(int orderItemId, int orderId, int menuId, int quantity, double subTotal) {
 		super();
 		this.orderItemId = orderItemId;
 		this.orderId = orderId;
@@ -46,10 +46,10 @@ public class OrderItem
 	public void setQuantity(int quantity) {
 		this.quantity = quantity;
 	}
-	public float getSubTotal() {
+	public double getSubTotal() {
 		return subTotal;
 	}
-	public void setSubTotal(float subTotal) {
+	public void setSubTotal(double subTotal) {
 		this.subTotal = subTotal;
 	}
 	@Override

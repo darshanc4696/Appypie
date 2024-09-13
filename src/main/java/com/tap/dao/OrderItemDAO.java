@@ -9,6 +9,6 @@ public interface OrderItemDAO
 {
 	int addOrderItem(OrderItem oi);
 	List<OrderItem> fetchAllOrders();
-	OrderItem fetchSpecificOrder(int orderId, int menuId);	
+	List<OrderItem> fetchSpecificOrder(int orderId);	
 
 }

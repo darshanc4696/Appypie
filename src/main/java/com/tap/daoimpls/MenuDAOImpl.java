@@ -175,7 +175,7 @@ public class MenuDAOImpl implements MenuDAO
 	public Menu getMenuItem(int menuId) 
 	{
 		try {
-			
+		    menuList.clear(); 
 			pstmt = connection.prepareStatement(SELECT_MENU);
 			pstmt.setInt(1, menuId);
 			

@@ -6,21 +6,19 @@ public class OrderTable
 	private int restaurantId;
 	private int userId;
 	private String orderDate;
-	private float totalAmount;
+	private double totalAmount;
 	private String status;
 	private String paymentMode;
 	
-	public OrderTable(int restaurantId, int userId, String orderDate, float totalAmount, String status,
-			String paymentMode) {
+	public OrderTable(int restaurantId, int userId,double totalAmount, String status, String paymentMode) {
 		super();
 		this.restaurantId = restaurantId;
 		this.userId = userId;
-		this.orderDate = orderDate;
 		this.totalAmount = totalAmount;
 		this.status = status;
 		this.paymentMode = paymentMode;
 	}
-	public OrderTable(int orderId, int restaurantId, int userId, String orderDate, float totalAmount, String status,
+	public OrderTable(int orderId, int restaurantId, int userId, String orderDate, double totalAmount, String status,
 			String paymentMode) {
 		super();
 		this.orderId = orderId;
@@ -55,10 +53,10 @@ public class OrderTable
 	public void setOrderDate(String orderDate) {
 		this.orderDate = orderDate;
 	}
-	public float getTotalAmount() {
+	public double getTotalAmount() {
 		return totalAmount;
 	}
-	public void setTotalAmount(float totalAmount) {
+	public void setTotalAmount(double totalAmount) {
 		this.totalAmount = totalAmount;
 	}
 	public String getStatus() {

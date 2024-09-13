@@ -30,6 +30,7 @@ public class MenuServlet extends HttpServlet
 		
 		HttpSession session = req.getSession();
 		session.setAttribute("menuItems", menuItems);
+		session.setAttribute("restaurantId", restaurantId);
 		session.setAttribute("restaurantName", restaurant.getRestaurantName());
 		
 		resp.sendRedirect("menu.jsp");

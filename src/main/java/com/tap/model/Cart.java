@@ -58,9 +58,9 @@ public class Cart
 		items.clear();
 	}
 	
-	public int getTotal()
+	public double getTotal()
 	{
-		int total=0;
+		float total=0;
 		
 		for(Map.Entry<Integer, CartItem> item : items.entrySet())
 		{

@@ -3,6 +3,7 @@ package com.tap.daoimpls;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
@@ -30,7 +31,8 @@ public class OrderTableDAOImpl implements OrderTableDAO
 	private static final String ADD_Order = "insert into ordertable(restaurantId, userId, totalAmount, status, paymentMode) values (?,?,?,?,?)";
 	private static final String SELECT_ALL_ORDERS = "select * from ordertable";
 	private static final String SELECT_SPECIFIC_ORDER = "select * from ordertable where restaurantId=? and userId=?";
-
+	private static final String GET_MAXORDERID = "select max(orderId) from ordertable";
+	
 	public OrderTableDAOImpl()
 	{
 		connection = MyConnection.myConnect();
@@ -43,7 +45,7 @@ public class OrderTableDAOImpl implements OrderTableDAO
 			pstmt = connection.prepareStatement(ADD_Order);
 			pstmt.setInt(1, o.getRestaurantId());
 			pstmt.setInt(2, o.getUserId());
-			pstmt.setFloat(3, o.getTotalAmount());
+			pstmt.setDouble(3, o.getTotalAmount());
 			pstmt.setString(4, o.getStatus());
 			pstmt.setString(5, o.getPaymentMode());
 			
@@ -113,6 +115,28 @@ public class OrderTableDAOImpl implements OrderTableDAO
 			e.printStackTrace();
 		}
 		return orderTable;
+	}
+	
+	@Override
+	public int getLatestOrderId()
+	{
+		int maxId = 0;
+		try 
+		{
+			stmt = connection.createStatement();
+			resultSet = stmt.executeQuery(GET_MAXORDERID);
+			
+			if (resultSet.next()) 
+	        {
+	            maxId = resultSet.getInt(1);
+	        }
+			
+		} catch (SQLException e) 
+		{
+			e.printStackTrace();
+		}
+		
+		return maxId;
 	}
 
 }
